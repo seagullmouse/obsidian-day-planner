@@ -38,6 +38,7 @@ export default class PlannerMermaid {
                 tasks.push(text);
             }
         });
+        console.dir(items);
         return {tasks, breaks};
     }
 

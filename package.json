@@ -4,18 +4,13 @@
   "description": "A plugin to help you plan your day and setup pomodoro timers",
   "main": "main.js",
   "scripts": {
-    "dev": "rollup --config rollup.config.js -w",
-    "build": "rollup --config rollup.config.js",
-    "test": "cross-env TS_NODE_COMPILER_OPTIONS='{ \"module\": \"commonjs\" }' mocha -r ts-node/register -r ignore-styles -r jsdom-global/register tests/**/*.test.ts",
-    "coverage": "nyc -r lcov -e .ts -x \"*.test.ts\" npm run test"
+    "dev": "node esbuild.config.mjs",
+    "build": "node esbuild.config.mjs production"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^15.1.0",
-    "@rollup/plugin-node-resolve": "^9.0.0",
-    "@rollup/plugin-typescript": "^6.0.0",
     "@tsconfig/svelte": "^1.0.13",
     "@types/chai": "^4.2.18",
     "@types/mocha": "^8.2.2",
@@ -23,15 +18,14 @@
     "@types/node": "^14.17.3",
     "chai": "^4.3.4",
     "cross-env": "^7.0.3",
+    "esbuild-svelte": "^0.7.1",
     "ignore-styles": "^5.0.1",
     "jsdom": "^16.6.0",
     "jsdom-global": "^3.0.2",
     "mocha": "^8.4.0",
     "nyc": "^15.1.0",
     "obsidian": "https://github.com/obsidianmd/obsidian-api/tarball/master",
-    "rollup": "^2.52.1",
-    "rollup-plugin-copy": "^3.4.0",
-    "rollup-plugin-svelte": "^6.1.1",
+    "svelte": "^3.38.2",
     "svelte-check": "^1.6.0",
     "svelte-preprocess": "^4.7.3",
     "ts-node": "^9.1.1",
@@ -39,6 +33,6 @@
     "typescript": "^4.3.4"
   },
   "dependencies": {
-    "svelte": "^3.38.2"
+    "esbuild": "^0.14.47"
   }
 }

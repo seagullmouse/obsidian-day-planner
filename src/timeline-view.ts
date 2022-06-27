@@ -13,6 +13,7 @@ export default class TimelineView extends ItemView {
     constructor(leaf: WorkspaceLeaf, settings: DayPlannerSettings){
         super(leaf);
         this.settings = settings;
+        //console.log(111, this.settings, this.leaf)
     }
 
     getViewType(): string {
